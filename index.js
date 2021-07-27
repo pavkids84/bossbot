@@ -17,7 +17,7 @@ client.on('ready', () =>
 
 client.on('message', msg  => 
 {
-	var Now = New Date()
+	var Now = new Date()
 	Now.setHours(Now.getHours()+9)
 
 	if(msg.content.startsWith('.도움말'))
