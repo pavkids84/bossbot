@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()
 
+const http = require("http");
+setInterval(function () {
+  http.get("https://unitbossbot.herokuapp.com");
+}, 60000);
+
 const Discord = require('discord.js')
 
 const client = new Discord.Client()
