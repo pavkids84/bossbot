@@ -1,6 +1,6 @@
 var a
 
-var limit = setInterval(function () {a += 1)}, 60000);
+setInterval(function () {a += 1)}, 60000);
 
 
 const Discord = require('discord.js')
