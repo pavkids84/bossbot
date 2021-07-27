@@ -1,7 +1,7 @@
-const http = require("http");
-setInterval(function () {
-  http.get("https://unitbossbot.herokuapp.com/");
-}, 60000);
+var a
+
+var limit = setInterval(function () {a += 1)}, 60000);
+
 
 const Discord = require('discord.js')
 
