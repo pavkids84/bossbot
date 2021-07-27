@@ -1,11 +1,3 @@
-const express = require('express')
-const app = express()
-app.set('port', (process.env.PORT || 5000));
-
-const http = require("http");
-setInterval(function () {
-  http.get("https://unitbossbot.herokuapp.com");
-}, 60000);
 
 const Discord = require('discord.js')
 
