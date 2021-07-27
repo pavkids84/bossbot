@@ -1,7 +1,5 @@
-var a
-
-setInterval(function () {a += 1)}, 60000);
-
+const express = require('express')
+const app = express()
 
 const Discord = require('discord.js')
 
