@@ -1,6 +1,6 @@
 const http = require("http");
 setInterval(function () {
-  http.get("https://git.heroku.com/bossbot-unit.git");
+  http.get("https://unitbossbot.herokuapp.com/");
 }, 60000);
 
 const Discord = require('discord.js')
