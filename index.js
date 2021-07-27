@@ -30,7 +30,7 @@ client.on('message', msg  =>
 
 	if (msg.content.startsWith('.시간'))
 	{
-		return msg.channel.send('```'+new Date().toLocaleString()+'```')
+		return msg.channel.send('```'+new Date().toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' })+'```')
 	}
 
 	if (msg.content.startsWith('.삭제')||msg.content.startsWith('.청소')) 
