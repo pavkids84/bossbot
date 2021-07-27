@@ -1,3 +1,8 @@
+const http = require("http");
+setInterval(function () {
+  http.get("http://서버주소.herokuapp.com");
+}, 60000);
+
 const Discord = require('discord.js')
 
 const client = new Discord.Client()
