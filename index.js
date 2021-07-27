@@ -17,6 +17,9 @@ client.on('ready', () =>
 
 client.on('message', msg  => 
 {
+	var Now = Now
+	Now.setHours(Now.getHours()+9)
+
 	if(msg.content.startsWith('.도움말'))
 	{
 		return msg.channel.send('```.도움말 : 모든 명령어를 출력합니다.\n'
@@ -30,7 +33,7 @@ client.on('message', msg  =>
 
 	if (msg.content.startsWith('.시간'))
 	{
-		return msg.channel.send('```'+new Date().toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' })+'```')
+		return msg.channel.send('```'+Now.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' })+'```')
 	}
 
 	if (msg.content.startsWith('.삭제')||msg.content.startsWith('.청소')) 
@@ -93,8 +96,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Devtimer)
-			Devtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-데블랑 젠타임 30분 전\n\n데블랑 젠타임 : ' + Devtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Devago = 1}, Devtime.getTime()-new Date().getTime()-1800000)
-			Devtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 데블랑이 나타났다.```'); Devtime = null; Devago = 0}, Devtime.getTime()-new Date().getTime())
+			Devtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-데블랑 젠타임 30분 전\n\n데블랑 젠타임 : ' + Devtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Devago = 1}, Devtime.getTime()-Now.getTime()-1800000)
+			Devtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 데블랑이 나타났다.```'); Devtime = null; Devago = 0}, Devtime.getTime()-Now.getTime())
 			if(Dcheck)
 			{
 				Dcheck = 0
@@ -107,8 +110,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Devtimer)
-			Devtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-데블랑 젠타임 30분 전\n\n데블랑 젠타임 : ' + Devtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Devago = 1}, Devtime.getTime()-new Date().getTime()-1800000)
-			Devtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 데블랑이 나타났다.```'); Devtime = null; Devago = 0}, Devtime.getTime()-new Date().getTime())
+			Devtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-데블랑 젠타임 30분 전\n\n데블랑 젠타임 : ' + Devtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Devago = 1}, Devtime.getTime()-Now.getTime()-1800000)
+			Devtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 데블랑이 나타났다.```'); Devtime = null; Devago = 0}, Devtime.getTime()-Now.getTime())
 			if(Dcheck)
 			{
 				Dcheck = 0
@@ -121,8 +124,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Bigtimer)
-			Bigtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빅마마 젠타임 30분 전\n\n빅마마 젠타임 : ' + Bigtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bigago = 1}, Bigtime.getTime()-new Date().getTime()-1800000)
-			Bigtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빅마마가 나타났다.```'); Bigtime = null; Bigago = 0}, Bigtime.getTime()-new Date().getTime())
+			Bigtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빅마마 젠타임 30분 전\n\n빅마마 젠타임 : ' + Bigtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bigago = 1}, Bigtime.getTime()-Now.getTime()-1800000)
+			Bigtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빅마마가 나타났다.```'); Bigtime = null; Bigago = 0}, Bigtime.getTime()-Now.getTime())
 			if(Bcheck)
 			{
 				Bcheck = 0
@@ -135,8 +138,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Bigtimer)
-			Bigtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빅마마 젠타임 30분 전\n\n빅마마 젠타임 : ' + Bigtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bigago = 1}, Bigtime.getTime()-new Date().getTime()-1800000)
-			Bigtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빅마마가 나타났다.```'); Bigtime = null;; Bigago = 0}, Bigtime.getTime()-new Date().getTime())
+			Bigtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빅마마 젠타임 30분 전\n\n빅마마 젠타임 : ' + Bigtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bigago = 1}, Bigtime.getTime()-Now.getTime()-1800000)
+			Bigtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빅마마가 나타났다.```'); Bigtime = null;; Bigago = 0}, Bigtime.getTime()-Now.getTime())
 			if(Bcheck)
 			{
 				Bcheck = 0
@@ -149,8 +152,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			}
 			clearTimeout(Okptimer)
-			Okptimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-우크파나 젠타임 30분 전\n\n우크파나 젠타임 : ' + Okptime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Okpago = 1}, Okptime.getTime()-new Date().getTime()-1800000)
-			Okptimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 우크파나가 나타났다.```'); Okptime = null; Okpago = 0}, Okptime.getTime()-new Date().getTime())
+			Okptimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-우크파나 젠타임 30분 전\n\n우크파나 젠타임 : ' + Okptime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Okpago = 1}, Okptime.getTime()-Now.getTime()-1800000)
+			Okptimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 우크파나가 나타났다.```'); Okptime = null; Okpago = 0}, Okptime.getTime()-Now.getTime())
 			if(Ocheck)
 			{
 				Ocheck = 0
@@ -163,8 +166,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			}
 			clearTimeout(Okptimer)
-			Okptimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-우크파나 젠타임 30분 전\n\n우크파나 젠타임 : ' + Okptime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Okpago = 1}, Okptime.getTime()-new Date().getTime()-1800000)
-			Okptimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 우크파나가 나타났다.```'); Okptime = null; Okpago = 0}, Okptime.getTime()-new Date().getTime())
+			Okptimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-우크파나 젠타임 30분 전\n\n우크파나 젠타임 : ' + Okptime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Okpago = 1}, Okptime.getTime()-Now.getTime()-1800000)
+			Okptimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 우크파나가 나타났다.```'); Okptime = null; Okpago = 0}, Okptime.getTime()-Now.getTime())
 			if(Ocheck)
 			{
 				Ocheck = 0;
@@ -177,8 +180,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			 }
 			clearTimeout(Diltimer)
-			Diltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-마녀딜린 젠타임 30분 전\n\n마녀딜린 젠타임 : ' + Diltime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Dilago = 1}, Diltime.getTime()-new Date().getTime()-1800000)
-			Diltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 마녀딜린이 나타났다.```'); Diltime = null; Dilago = 0}, Diltime.getTime()-new Date().getTime())
+			Diltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-마녀딜린 젠타임 30분 전\n\n마녀딜린 젠타임 : ' + Diltime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Dilago = 1}, Diltime.getTime()-Now.getTime()-1800000)
+			Diltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 마녀딜린이 나타났다.```'); Diltime = null; Dilago = 0}, Diltime.getTime()-Now.getTime())
 			break
 			case '딜린' : Bossname = 'Dil'
 			date = Diltime = setBT(msg, 2,0,0,0)
@@ -187,8 +190,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			 }
 			clearTimeout(Diltimer)
-			Diltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-마녀딜린 젠타임 30분 전\n\n마녀딜린 젠타임 : ' + Diltime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Dilago = 1}, Diltime.getTime()-new Date().getTime()-1800000)
-			Diltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 마녀딜린이 나타났다.```'); Diltime = null; Dilago = 0}, Diltime.getTime()-new Date().getTime())
+			Diltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-마녀딜린 젠타임 30분 전\n\n마녀딜린 젠타임 : ' + Diltime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Dilago = 1}, Diltime.getTime()-Now.getTime()-1800000)
+			Diltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 마녀딜린이 나타났다.```'); Diltime = null; Dilago = 0}, Diltime.getTime()-Now.getTime())
 			break			
 			case '마녀딜린' : Bossname = 'Dil'
 			date = Diltime = setBT(msg, 2,0,0,0)
@@ -197,8 +200,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			 }
 			clearTimeout(Diltimer)
-			Diltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-마녀딜린 젠타임 30분 전\n\n마녀딜린 젠타임 : ' + Diltime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Dilago = 1}, Diltime.getTime()-new Date().getTime()-1800000)
-			Diltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 마녀딜린이 나타났다.```'); Diltime = null; Dilago = 0}, Diltime.getTime()-new Date().getTime())
+			Diltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-마녀딜린 젠타임 30분 전\n\n마녀딜린 젠타임 : ' + Diltime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Dilago = 1}, Diltime.getTime()-Now.getTime()-1800000)
+			Diltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 마녀딜린이 나타났다.```'); Diltime = null; Dilago = 0}, Diltime.getTime()-Now.getTime())
 			break			
 			case '바슬' : Bossname = 'Bas'
 			date = Bastime = setBT(msg, 1,0,0,0)
@@ -207,8 +210,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			}
 			clearTimeout(Bastimer)
-			Bastimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-바슬라프 젠타임 30분 전\n\n바슬라프 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Basago = 1}, Bastime.getTime()-new Date().getTime()-1800000)
-			Bastimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 바슬라프가 나타났다.```'); Bastime = null; Basago = 0}, Bastime.getTime()-new Date().getTime())
+			Bastimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-바슬라프 젠타임 30분 전\n\n바슬라프 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Basago = 1}, Bastime.getTime()-Now.getTime()-1800000)
+			Bastimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 바슬라프가 나타났다.```'); Bastime = null; Basago = 0}, Bastime.getTime()-Now.getTime())
 			break
 			case '바슬라프' : Bossname = 'Bas'
 			date = Bastime = setBT(msg, 1,0,0,0)
@@ -217,8 +220,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			}
 			clearTimeout(Bastimer)
-			Bastimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-바슬라프 젠타임 30분 전\n\n바슬라프 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Basago = 1}, Bastime.getTime()-new Date().getTime()-1800000)
-			Bastimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 바슬라프가 나타났다.```'); Bastime = null; Basago = 0}, Bastime.getTime()-new Date().getTime())
+			Bastimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-바슬라프 젠타임 30분 전\n\n바슬라프 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Basago = 1}, Bastime.getTime()-Now.getTime()-1800000)
+			Bastimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 바슬라프가 나타났다.```'); Bastime = null; Basago = 0}, Bastime.getTime()-Now.getTime())
 			break			
 			case '빌리' : Bossname = 'Bil'
 			date = Biltime = setBT(msg, 0,7,55,0)
@@ -227,8 +230,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			}
 			clearTimeout(Biltimer)
-			Biltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빌리어드 젠타임 30분 전\n\n빌리어드 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bilago = 1}, Biltime.getTime()-new Date().getTime()-1800000)
-			Biltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빌리어드가 나타났다.```'); Biltime = null; Bilago = 0}, Biltime.getTime()-new Date().getTime())
+			Biltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빌리어드 젠타임 30분 전\n\n빌리어드 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bilago = 1}, Biltime.getTime()-Now.getTime()-1800000)
+			Biltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빌리어드가 나타났다.```'); Biltime = null; Bilago = 0}, Biltime.getTime()-Now.getTime())
 			break
 			case '빌리어드' : Bossname = 'Bil'
 			date = Biltime = setBT(msg, 0,7,55,0)
@@ -237,8 +240,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			}
 			clearTimeout(Biltimer)
-			Biltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빌리어드 젠타임 30분 전\n\n빌리어드 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bilago = 1}, Biltime.getTime()-new Date().getTime()-1800000)
-			Biltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빌리어드가 나타났다.```'); Biltime = null; Bilago = 0}, Biltime.getTime()-new Date().getTime())
+			Biltimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-빌리어드 젠타임 30분 전\n\n빌리어드 젠타임 : ' + Bastime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Bilago = 1}, Biltime.getTime()-Now.getTime()-1800000)
+			Biltimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 빌리어드가 나타났다.```'); Biltime = null; Bilago = 0}, Biltime.getTime()-Now.getTime())
 			break			
 			case '페이스' : Bossname = 'Pei'
 			date = Peitime = setBT(msg, 0,5,50,0)
@@ -247,8 +250,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 				} 
 			clearTimeout(Peitimer)
-			Peitimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-페이쓰 젠타임 30분 전\n\n페이쓰 젠타임 : ' + Peitime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Peiago = 1}, Peitime.getTime()-new Date().getTime()-1800000)
-			Peitimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 페이쓰가 나타났다.```'); Peitime = null; Peiago = 0}, Peitime.getTime()-new Date().getTime())
+			Peitimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-페이쓰 젠타임 30분 전\n\n페이쓰 젠타임 : ' + Peitime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Peiago = 1}, Peitime.getTime()-Now.getTime()-1800000)
+			Peitimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 페이쓰가 나타났다.```'); Peitime = null; Peiago = 0}, Peitime.getTime()-Now.getTime())
 			break
 			case '페이쓰' : Bossname = 'Pei'
 			date = Peitime = setBT(msg, 0,5,50,0)
@@ -257,8 +260,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Peitimer)
-			Peitimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-페이쓰 젠타임 30분 전\n\n페이쓰 젠타임 : ' + Peitime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Peiago = 1}, Peitime.getTime()-new Date().getTime()-1800000)
-			Peitimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 페이쓰가 나타났다.```'); Peitime = null; Peiago = 0}, Peitime.getTime()-new Date().getTime())
+			Peitimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-페이쓰 젠타임 30분 전\n\n페이쓰 젠타임 : ' + Peitime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Peiago = 1}, Peitime.getTime()-Now.getTime()-1800000)
+			Peitimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 페이쓰가 나타났다.```'); Peitime = null; Peiago = 0}, Peitime.getTime()-Now.getTime())
 			break			
 			case '일루' : Bossname = 'Ill'
 			date = Illtime = setBT(msg, 2,0,00,0)
@@ -267,8 +270,8 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Illtimer)
-			Illtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-일루스트 젠타임 30분 전\n\n일루스트 젠타임 : ' + Illtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Illago = 1}, Illtime.getTime()-new Date().getTime()-1800000)
-			Illtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 일루트스가 나타났다.```'); Illtime = null; Illago = 0}, Illtime.getTime()-new Date().getTime())
+			Illtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-일루스트 젠타임 30분 전\n\n일루스트 젠타임 : ' + Illtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Illago = 1}, Illtime.getTime()-Now.getTime()-1800000)
+			Illtimerr = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-야생의 일루트스가 나타났다.```'); Illtime = null; Illago = 0}, Illtime.getTime()-Now.getTime())
 			break
 			case '일루스트' : Bossname = 'Ill'
 			date = Illtime = setBT(msg, 2,0,00,0)
@@ -277,13 +280,13 @@ client.on('message', msg  =>
 				return msg.channel.send('```날짜가 유효하지 않습니다.```')
 			} 
 			clearTimeout(Illtimer)
-			Illtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-일루스트 젠타임 30분 전\n\n일루스트 젠타임 : ' + Illtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Illago = 1}, Illtime.getTime()-new Date().getTime()-1800000)
+			Illtimer = setTimeout(function(){client.channels.cache.get(process.env.channel).send('```diff\n-일루스트 젠타임 30분 전\n\n일루스트 젠타임 : ' + Illtime.toLocaleString("ko-KR", { style: 'currency', currency: 'KRW' }) + '```'); Illago = 1}, Illtime.getTime()-Now.getTime()-1800000)
 			Illtimerr = setTimeout(function(){client.channels.cache.get(process.env
 				
 				
 				
 				
-				.channel).send('```diff\n-야생의 일루트스가 나타났다.```'); Illtime = null; Illago = 0}, Illtime.getTime()-new Date().getTime())
+				.channel).send('```diff\n-야생의 일루트스가 나타났다.```'); Illtime = null; Illago = 0}, Illtime.getTime()-Now.getTime())
 			break
 			default : msg.channel.send('```잘못된 보스명입니다.\n\n유효한 보스명 : 데블, 데블랑, 빅마, 빅마마, 우크, 우크파나, 마녀, 딜린, 마녀딜린, 바슬, 바슬라프, 빌리, 빌리어드, 페이스, 페이쓰, 일루, 일루스트```')
 		}
@@ -403,7 +406,7 @@ client.on('message', msg  =>
 			}
 		}
 
-		var year = new Date().getFullYear()
+		var year = Now.getFullYear()
 		var mon = parseInt(msg.content.split(' ')[1])-1 
 		var date = parseInt(msg.content.split(' ')[2]) 
 		var fromhour = parseInt(msg.content.split(' ')[3]) 
@@ -414,7 +417,7 @@ client.on('message', msg  =>
 		Fromchecktime = new Date(year, mon, date, fromhour, frommin, 0, 0 )
 		Tochecktime = new Date(year, mon, date, tohour, tomin, 0 ,0)
 
-		if (Tochecktime.getTime() < new Date().getTime() || Tochecktime.getTime() < Fromchecktime.getTime() || Fromchecktime == null || Tochecktime == null)
+		if (Tochecktime.getTime() < Now.getTime() || Tochecktime.getTime() < Fromchecktime.getTime() || Fromchecktime == null || Tochecktime == null)
 		{
 			Fromchecktime = null, Tochecktime = null
 			return	msg.channel.send('```해당 날짜는 유효하지 않습니다.```')
@@ -426,7 +429,7 @@ client.on('message', msg  =>
 		clearTimeout(Fromchecktimer)
 		clearTimeout(Tochecktimer)
 
-		setTimeout(function(){msg.channel.send('```점검 시작```'); Fcheckago = Tcheckago = 1}, Fromchecktime.getTime()-new Date().getTime())
+		setTimeout(function(){msg.channel.send('```점검 시작```'); Fcheckago = Tcheckago = 1}, Fromchecktime.getTime()-Now.getTime())
 		setTimeout
 			(
 				function()
@@ -436,7 +439,7 @@ client.on('message', msg  =>
 					Fcheckago = Tcheckago = 0
 					Devtime = null, Bigtime = null, Okptime = null, Diltime = null, Bastime = null, Biltime = null, Peitime = null, Illtime = null, Fromchecktime = null, Tochecktime = null
 				}, 
-				Tochecktime.getTime()-new Date().getTime()
+				Tochecktime.getTime()-Now.getTime()
 			)
 			return
 	}
@@ -446,15 +449,15 @@ function setBT(msg, date, hour, min, sec)
 {
 	var retdate
 
-	var data_year = new Date().getFullYear()
-	var data_mon = new Date().getMonth()
+	var data_year = Now.getFullYear()
+	var data_mon = Now.getMonth()
 	var data_date = parseInt(msg.content.split(' ')[2]) + date
 	var data_hour = parseInt(msg.content.split(' ')[3]) + hour
 	var data_min = parseInt(msg.content.split(' ')[4]) + min
 	var data_sec = parseInt(msg.content.split(' ')[5]) + sec
 
 	retdate = new Date(data_year, data_mon, data_date, data_hour, data_min, data_sec, 0)
-	if (retdate.getTime() < new Date().getTime())
+	if (retdate.getTime() < Now.getTime())
 	{
 		retdate = null
 	}
@@ -462,4 +465,3 @@ function setBT(msg, date, hour, min, sec)
 }
 
 client.login(process.env.token)
-
